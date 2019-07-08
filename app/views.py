@@ -19,7 +19,9 @@ def index():
 import os
 Path_here = os.path.dirname(os.path.abspath(__file__))
 print(Path_here)
-app.config["IMAGE_UPLOADS"] =Path_here+ "\\templates\\upload_csv\\"
+PARENT_DIR = os.path.join(Path_here, os.pardir) 
+
+app.config["IMAGE_UPLOADS"] =PARENT_DIR+ "\\templates\\upload_csv\\"
 print(app.config["IMAGE_UPLOADS"])
 @app.route('/before', methods=["GET", "POST"])
 
