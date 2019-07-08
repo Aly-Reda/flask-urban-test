@@ -20,11 +20,11 @@ import os
 Path_here = os.path.dirname(os.path.abspath(__file__))
 print(Path_here)
 from os import path , makedirs
-if not path.exists(Path_here+'\\templates\\upload_csv\\'):
-	makedirs(Path_here+'\\templates\\upload_csv\\')
+if not path.exists(Path_here+'/templates/upload_csv/'):
+	makedirs(Path_here+'/templates/upload_csv/')
 	print("Done")
 
-app.config["IMAGE_UPLOADS"] =os.path.join(Path_here+ "\\templates\\upload_csv\\")
+app.config["IMAGE_UPLOADS"] =os.path.join(Path_here+ "/templates/upload_csv/")
 print(app.config["IMAGE_UPLOADS"])
 
 print(app.config["IMAGE_UPLOADS"])
