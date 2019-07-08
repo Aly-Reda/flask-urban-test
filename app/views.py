@@ -18,11 +18,11 @@ def index():
 
 import os
 Path_here = os.path.dirname(os.path.abspath(__file__))
-print(Path_here)
+#print(Path_here)
 PARENT_DIR = os.path.join(Path_here, os.pardir) 
 
-app.config["IMAGE_UPLOADS"] =PARENT_DIR+ "\\templates\\upload_csv\\"
-print(app.config["IMAGE_UPLOADS"])
+app.config["IMAGE_UPLOADS"] =os.path.join(PARENT_DIR+ "/templates/upload_csv/")
+#print(app.config["IMAGE_UPLOADS"])
 @app.route('/before', methods=["GET", "POST"])
 
 def before_testing():
