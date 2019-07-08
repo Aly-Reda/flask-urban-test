@@ -16,7 +16,7 @@ from glob import iglob
 def index():
 	return render_template('index.html')
 
-app.config["IMAGE_UPLOADS"] = "https://peaceful-taiga-88193.herokuapp.com/app/templates/upload_csv/"
+app.config["IMAGE_UPLOADS"] = "/app/templates/upload_csv/"
 
 @app.route('/before', methods=["GET", "POST"])
 
