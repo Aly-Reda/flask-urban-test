@@ -1,0 +1,29 @@
+{% extends "templates/admin_templetes.html" %}
+
+{% block title %}After{% endblock %}
+
+{% block main %}
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>After Testing Page</h1>
+      <hr>
+            <form action="/after" method="POST" enctype="multipart/form-data">
+
+        <div class="form-group">
+          <label>Select CSV File</label>
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" name="csv" id="csv">
+            <label class="custom-file-label" for="csv">Select CSV File</label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Reverse</button>
+
+      </form>
+
+    </div>
+  </div>
+</div>
+{% endblock %}
