@@ -16,8 +16,11 @@ from glob import iglob
 def index():
 	return render_template('index.html')
 
-app.config["IMAGE_UPLOADS"] = "/app/templates/upload_csv/"
-
+import os
+Path_here = os.path.dirname(os.path.abspath(__file__))
+print(Path_here)
+app.config["IMAGE_UPLOADS"] =Path_here+ "\\templates\\upload_csv\\"
+print(app.config["IMAGE_UPLOADS"])
 @app.route('/before', methods=["GET", "POST"])
 
 def before_testing():
@@ -63,7 +66,7 @@ def after_testing():
 			image = request.files["csv"]
 			if image.filename == "":
 				print("No filename")
-				return redirect(request.url )
+				return redirect(request.url)
 
 			else:
 				csv_file =os.path.join(app.config["IMAGE_UPLOADS"], image.filename)
